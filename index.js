@@ -1,17 +1,39 @@
-import express, { json } from 'express'
-const app = express()
+import express from 'express'
+import pkg from 'pg'
 
-app.use(json())
+const {Client} = pkg
 
-app.post('/api/register', (req, res) => {
-     const note = req.body
-     console.log(note)
-     res.json(note)
+const server = express()
 
-        
-    })
-
-
-app.listen(3000, function(){
-    console.log('Server work on port 3000')
+const client = new Client({
+    database: 'lokkerroom_db',
+    host: 'localhost',
+    port: 5432,
+    user: 'postgres',
+    password: 'becode20092022',
 })
+
+
+server.get('/test_table/all',function (req, res){
+    //connect to the test table and retrieve all of its contents
+    client.connect((err) => {
+        if (err) {
+            console.error('connection error', err.stack)
+        }
+        else{
+
+            //console.log('connetcted')
+        }
+    })
+    
+   
+})
+
+client.query('SELECT * FROM test', (err, res) => {
+    if(err) throw err
+    console.log(res)
+    response.send({connection: "succesuful", connection_time: Date.now(), response: res})
+    client.end()
+})
+
+server.listen(3000)
