@@ -1,26 +1,15 @@
 {
-  "name": "lokeroom",
+  "name": "loklok",
   "version": "1.0.0",
-  "description": "Sports app",
+  "description": "README.md",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gmka98/lokkeroom.git"
-  },
-  "keywords": [
-    "sports"
-  ],
-  "author": "Mukendi Kabongo Gaël",
+  "keywords": [],
+  "author": "Gael Mukendi Kabongo",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/gmka98/lokkeroom/issues"
-  },
-  "homepage": "https://github.com/gmka98/lokkeroom#readme",
   "dependencies": {
-    "express": "^4.18.2",
-    "firebase": "^9.14.0"
+    "express": "^4.18.2"
   }
 }
